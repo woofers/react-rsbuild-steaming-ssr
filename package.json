@@ -1,0 +1,52 @@
+{
+  "name": "cover-art",
+  "private": true,
+  "sideEffects": false,
+  "scripts": {
+    "clean": "rimraf build dist",
+    "build": "rsbuild build && rimraf build/index.html",
+    "dev": "node ./server.mjs",
+    "lint": "biome lint --error-on-warnings",
+    "start": "node ./prod-server.mjs",
+    "format": "biome format --write",
+    "dev-cf": "wrangler dev --live-reload",
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    "@tanstack/query-core": "^5.59.13",
+    "@tanstack/react-query": "^5.59.13",
+    "cva": "1.0.0-beta.1",
+    "deepmerge": "^4.3.1",
+    "react": "19.0.0-rc-3edc000d-20240926",
+    "react-dom": "19.0.0-rc-3edc000d-20240926",
+    "react-router": "^6.26.2",
+    "react-router-dom": "^6.26.2",
+    "suspend-react": "^0.1.3",
+    "tailwind-merge": "^2.5.2"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.8.3",
+    "@fastify/middie": "^9.0.2",
+    "@hono/node-server": "^1.13.1",
+    "@rsbuild/core": "^1.0.7",
+    "@rsbuild/plugin-react": "^1.0.2",
+    "@tailwindcss/cli": "4.0.0-alpha.14",
+    "@tailwindcss/postcss": "4.0.0-alpha.14",
+    "@types/react": "^18.2.20",
+    "@types/react-dom": "^18.2.7",
+    "autoprefixer": "^10.4.19",
+    "fastify": "^5.0.0",
+    "fastify-standard-request-reply": "^0.1.3",
+    "gh-pages": "^6.1.1",
+    "hono": "^4.6.3",
+    "postcss": "^8.4.38",
+    "rimraf": "^6.0.1",
+    "tailwindcss": "4.0.0-alpha.14",
+    "typescript": "^5.1.6",
+    "wrangler": "3.80.4"
+  },
+  "engines": {
+    "node": ">=20.17.0"
+  },
+  "packageManager": "pnpm@9.8.0+sha512.8e4c3550fb500e808dbc30bb0ce4dd1eb614e30b1c55245f211591ec2cdf9c611cabd34e1364b42f564bd54b3945ed0f49d61d1bbf2ec9bd74b866fcdc723276"
+}

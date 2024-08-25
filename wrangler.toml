@@ -1,0 +1,10 @@
+name = "react-rsbuild-steaming-ssr-2"
+compatibility_date = "2024-08-14"
+compatibility_flags = ["nodejs_compat"]
+
+# Using pages
+pages_build_output_dir = "./build"
+
+# Using a worker + Hono
+# main = "cf-server.mjs"
+# assets = { directory = "./build/", binding = "ASSETS" }

@@ -14,6 +14,12 @@ import App from './app'
 import { isBot, type AssetMap } from './utils'
 import { getQueryClient } from 'utils/query-client'
 
+/*
+ * Adapted from: 
+ * - https://reactrouter.com/en/main/guides/ssr
+ * - https://react.dev/reference/react-dom/server/renderToPipeableStream#waiting-for-all-content-to-load-for-crawlers-and-static-generation
+ */
+
 const headers = { 'content-type': 'text/html' }
 
 export const handler = createStaticHandler(routes)

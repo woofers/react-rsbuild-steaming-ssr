@@ -5,6 +5,10 @@ import { createStandardRequest } from 'fastify-standard-request-reply'
 import { createFetchRequest } from './fetch.mjs'
 import { getAssetMap } from './plugin-emit-stats.mjs'
 
+/*
+ * Adapted from: https://rsbuild.dev/guide/advanced/ssr#custom-server
+ */
+
 /**
  * @typedef {Awaited<ReturnType<Awaited<ReturnType<import('@rsbuild/core').createRsbuild>>['createDevServer']>>} DevServer
  */

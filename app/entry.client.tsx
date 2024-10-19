@@ -11,6 +11,12 @@ import App from './app'
 import { QueryClientProvider } from '@tanstack/react-query'
 import { getQueryClient } from 'utils/query-client'
 
+/*
+ * Adapted from: 
+ * - https://reactrouter.com/en/main/guides/ssr
+ * - https://react.dev/reference/react-dom/client/hydrateRoot#hydrating-server-rendered-html
+ */
+
 void hydrate()
 
 function castToLazy<T extends {}>(route: T) {

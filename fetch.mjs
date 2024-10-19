@@ -1,3 +1,7 @@
+/*
+ * Converts a Node response and request into a web standard Request object
+ * Adapted from: https://reactrouter.com/en/main/guides/ssr
+ */
 export function createFetchRequest(req, res) {
   const getHeader = (req, value) => {
     if ('get' in req) return req.get(value)

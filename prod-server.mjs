@@ -5,6 +5,9 @@ import { serve } from '@hono/node-server'
 import { serveStatic } from '@hono/node-server/serve-static'
 import { Hono } from 'hono'
 
+/*
+ * Adapted from: https://rsbuild.dev/guide/advanced/ssr#custom-server
+ */
 const requireFile = createRequire(import.meta.url)
 
 const serverRender = async (c, assetMap) => {

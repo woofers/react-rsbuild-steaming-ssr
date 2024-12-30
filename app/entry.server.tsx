@@ -1,10 +1,5 @@
 import React, { StrictMode } from 'react'
 import {
-  createStaticHandler,
-  createStaticRouter,
-  StaticRouterProvider
-} from 'react-router-dom/server'
-import {
   dehydrate,
   HydrationBoundary,
   QueryClientProvider
@@ -13,6 +8,7 @@ import { routes } from './routes'
 import App from './app'
 import { isBot, type AssetMap } from './utils'
 import { getQueryClient } from 'utils/query-client'
+import { createStaticHandler, createStaticRouter, StaticRouterProvider } from 'react-router'
 
 /*
  * Adapted from: 

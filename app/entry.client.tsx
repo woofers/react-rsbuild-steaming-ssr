@@ -3,9 +3,11 @@ import { hydrateRoot } from 'react-dom/client'
 import {
   createBrowserRouter,
   matchRoutes,
+} from 'react-router'
+import {
   RouterProvider,
   RouterProviderProps
-} from 'react-router-dom'
+} from 'react-router/dom'
 import { routes } from './routes'
 import App from './app'
 import { QueryClientProvider } from '@tanstack/react-query'
@@ -45,7 +47,7 @@ const ClientApp: React.FC<Pick<RouterProviderProps, 'router'>> = ({
     <StrictMode>
       <App assetMap={window.assetMap}>
         <QueryClientProvider client={queryClient}>
-          <RouterProvider router={router} fallbackElement={null} />
+          <RouterProvider router={router} />
         </QueryClientProvider>
       </App>
     </StrictMode>

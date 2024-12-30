@@ -1,6 +1,7 @@
 import { dehydrate } from '@tanstack/query-core'
 import React from 'react'
-import { json, redirect, type RouteObject } from 'react-router'
+import { redirect, type RouteObject } from 'react-router'
+import { delay } from 'utils/delay'
 import { getData } from 'utils/get-data'
 import { getQueryClient } from 'utils/query-client'
 
@@ -14,6 +15,7 @@ export const routes = [
     path: '/',
     Component: React.lazy(() => import('./root')),
     errorElement: null,
+    hydrateFallbackElement: null,
     children: [
       {
         path: '*',
@@ -33,7 +35,7 @@ export const routes = [
             queryFn: getData,
             staleTime: 1000 * 60
           })
-          return json({ dehydratedState: dehydrate(queryClient) })
+          return { dehydratedState: dehydrate(queryClient) }
         }
       },
       {
